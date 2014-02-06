@@ -45,9 +45,9 @@ nodejs_bin_url = "#{node['nodejs']['src_url']}/#{nodejs_tar_path}"
 ark 'nodejs' do
   url             nodejs_bin_url
   checksum        expected_checksum
-  path            node['nodejs']['dir']
   home_dir        node['nodejs']['dir']
   version         node['nodejs']['version']
   append_env_path true
+  action :install
 end
 
